@@ -1,0 +1,15 @@
+int potentiovalue=0;
+
+
+void setup ()
+{
+  pinMode(9,OUTPUT);
+  Serial.begin(9600);
+}
+void loop ()
+{
+  potentiovalue=analogRead(0);
+  potentiovalue=map(potentiovalue,0,1023,0,1023);
+  analogWrite(9,potentiovalue);
+  Serial.println(potentiovalue);
+}
